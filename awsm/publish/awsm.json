@@ -13,7 +13,12 @@
         "exclude": [
           "aws-sdk"
         ],
-        "includePaths": []
+        "includePaths": [
+          "node_modules/awsm-npm-registry/node_modules/aws-sdk",
+          "node_modules/awsm-npm-registry/node_modules/tar",
+          "node_modules/awsm-npm-registry/node_modules/jsonjs",
+          "node_modules/awsm-npm-registry/node_modules/javascript-natural-sort"
+        ]
       },
       "excludePatterns": []
     },

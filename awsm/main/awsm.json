@@ -12,7 +12,10 @@
         "exclude": [
           "aws-sdk"
         ],
-        "includePaths": []
+        "includePaths": [
+          "node_modules/awsm-npm-registry/node_modules/superagent",
+          "node_modules/awsm-npm-registry/node_modules/aws-sdk"
+        ]
       },
       "excludePatterns": []
     },
