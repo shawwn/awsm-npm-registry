@@ -1,0 +1,61 @@
+{
+  "name": "registry",
+  "version": "0.0.1",
+  "location": "https://github.com/...",
+  "author": "",
+  "description": "",
+  "resources": {
+    "cloudFormation": {
+      "LambdaIamPolicyDocumentStatements": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:PutObjectAcl"
+          ],
+          "Resource": [
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:aws:s3:::",
+                  "registry.",
+                  {
+                    "Ref": "aaProjectDomain"
+                  },
+                  "/",
+                  {
+                    "Ref": "aaDataModelStage"
+                  },
+                  "*"
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "ApiGatewayIamPolicyDocumentStatements": [],
+      "Resources": {
+        "RegistryS3Bucket": {
+          "Type": "AWS::S3::Bucket",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "AccessControl": "PublicRead",
+            "BucketName": {
+              "Fn::Join": [
+                ".",
+                [
+                  "registry",
+                  {
+                    "Ref": "aaProjectDomain"
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
