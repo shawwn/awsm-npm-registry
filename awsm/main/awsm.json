@@ -18,7 +18,7 @@
     },
     "cloudFormation": {
       "Description": "",
-      "Handler": "aws_modules/registry/main/handler.handler",
+      "Handler": "aws_modules/awsm-npm-registry/main/handler.handler",
       "MemorySize": 128,
       "Runtime": "nodejs",
       "Timeout": 6
