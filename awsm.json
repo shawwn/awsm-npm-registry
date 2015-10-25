@@ -1,9 +1,9 @@
 {
   "name": "awsm-npm-registry",
   "version": "0.0.1",
-  "location": "https://github.com/...",
-  "author": "",
-  "description": "",
+  "location": "https://github.com/inbot/awsm-npm-registry",
+  "author": "Joona Kulmala <jmkulmala@gmail.com>",
+  "description": "Simple serverless NPM registry",
   "resources": {
     "cloudFormation": {
       "LambdaIamPolicyDocumentStatements": [
@@ -20,15 +20,14 @@
                 "",
                 [
                   "arn:aws:s3:::",
-                  "registry.",
+                  {
+                    "Ref": "aaStage"
+                  },
+                  ".registry.",
                   {
                     "Ref": "aaProjectDomain"
                   },
-                  "/",
-                  {
-                    "Ref": "aaDataModelStage"
-                  },
-                  "*"
+                  "/*"
                 ]
               ]
             }
@@ -46,6 +45,9 @@
               "Fn::Join": [
                 ".",
                 [
+                  {
+                    "Ref": "aaStage"
+                  },
                   "registry",
                   {
                     "Ref": "aaProjectDomain"
