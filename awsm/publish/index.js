@@ -1,6 +1,5 @@
 var crypto = require('crypto');
 var fs = require('fs');
-var through = require('through2');
 var tar = require('tar');
 var jsonjs = require('jsonjs');
 
