@@ -24,8 +24,5 @@
       "Runtime": "nodejs",
       "Timeout": 6
     }
-  },
-  "apiGateway": {
-    "deploy": false
   }
 }

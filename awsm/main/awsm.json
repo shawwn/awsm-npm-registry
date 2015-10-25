@@ -3,7 +3,7 @@
     "envVars": [
      "REGISTRY_BUCKET_NAME"
     ],
-    "deploy": false,
+    "deploy": true,
     "package": {
       "optimize": {
         "builder": "browserify",
