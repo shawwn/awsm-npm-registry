@@ -25,6 +25,7 @@
   "dependencies": {
     "aws-sdk": "^2.2.11",
     "babelify-es6-polyfill": "^1.0.4",
+    "bluebird": "^2.10.2",
     "javascript-natural-sort": "^0.7.1",
     "jsonjs": "^0.2.0",
     "superagent": "^1.4.0",

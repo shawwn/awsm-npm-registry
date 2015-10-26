@@ -4,21 +4,22 @@
      "REGISTRY_BUCKET_NAME",
      "REGISTRY_BUCKET_REGION"
     ],
-    "deploy": false,
+    "deploy": true,
     "package": {
       "optimize": {
         "builder": "browserify",
-        "babel": true,
-        "minify": false,
+        "minify": true,
         "ignore": [],
         "exclude": [
           "aws-sdk"
         ],
         "includePaths": [
           "node_modules/awsm-npm-registry/node_modules/aws-sdk",
+          "node_modules/awsm-npm-registry/node_modules/superagent",
           "node_modules/awsm-npm-registry/node_modules/tar",
           "node_modules/awsm-npm-registry/node_modules/jsonjs",
-          "node_modules/awsm-npm-registry/node_modules/javascript-natural-sort"
+          "node_modules/awsm-npm-registry/node_modules/javascript-natural-sort",
+          "node_modules/awsm-npm-registry/node_modules/bluebird"
         ]
       },
       "excludePatterns": []
