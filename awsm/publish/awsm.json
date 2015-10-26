@@ -4,10 +4,11 @@
      "REGISTRY_BUCKET_NAME",
      "REGISTRY_BUCKET_REGION"
     ],
-    "deploy": true,
+    "deploy": false,
     "package": {
       "optimize": {
         "builder": "browserify",
+        "babel": true,
         "minify": false,
         "ignore": [],
         "exclude": [

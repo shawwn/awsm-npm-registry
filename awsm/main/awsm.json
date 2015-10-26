@@ -7,14 +7,19 @@
     "package": {
       "optimize": {
         "builder": "browserify",
+        "babel": true,
         "minify": true,
         "ignore": [],
         "exclude": [
           "aws-sdk"
         ],
         "includePaths": [
+          "node_modules/awsm-npm-registry/node_modules/aws-sdk",
           "node_modules/awsm-npm-registry/node_modules/superagent",
-          "node_modules/awsm-npm-registry/node_modules/aws-sdk"
+          "node_modules/awsm-npm-registry/node_modules/tar",
+          "node_modules/awsm-npm-registry/node_modules/jsonjs",
+          "node_modules/awsm-npm-registry/node_modules/javascript-natural-sort",
+          "node_modules/awsm-npm-registry/node_modules/babelify-es6-polyfill"
         ]
       },
       "excludePatterns": []
