@@ -1,1 +1,3 @@
 awsm-npm-registry-*.tgz
+.idea/
+.npmignore

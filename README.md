@@ -59,3 +59,4 @@ $ aws s3 cp ./npm-package-<version>.tgz s3://<stage>-<domain>/<package_name>/ --
 - better support for [semver](https://github.com/npm/node-semver) version queries.
 - better error handling for main action.
 - authentication
+- figure out ENV variables automatically
