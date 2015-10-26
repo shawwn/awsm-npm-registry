@@ -1,6 +1,6 @@
 {
   "name": "awsm-npm-registry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple serverless NPM registry",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
