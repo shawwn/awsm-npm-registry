@@ -12,6 +12,8 @@ module.exports.run = function (event, context, cb) {
 
   var _metadata, _tempfile, _shasum;
 
+  utils.checkEnv();
+
   utils.getPackageMetadataOrTemplate(packageName)
     .then(function (metadata) {
       _metadata = metadata;

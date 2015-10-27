@@ -14,6 +14,8 @@ module.exports.run = function (event, context, cb) {
       });
   };
 
+  utils.checkEnv();
+
   utils.getPackageMetadata(packageName)
     .then(function (metadata) {
       return cb(null, metadata);
