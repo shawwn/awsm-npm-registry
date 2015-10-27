@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require('awsm-npm-registry').utils;
-var Promise = utils.promise;
+var Promise = utils.Promise;
 
 module.exports.run = function (event, context, cb) {
   var record = event.Records[0]; // FIXME: process multiple records
