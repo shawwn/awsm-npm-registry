@@ -2,6 +2,8 @@
 
 var utils = require('awsm-npm-registry').utils;
 
+var fallbackEnabled = !(process.env.REGISTRY_FALLBACK_DISABLED == "true");
+
 module.exports.run = function (event, context, cb) {
   var packageName = event.package_name;
 
@@ -20,7 +22,7 @@ module.exports.run = function (event, context, cb) {
     .then(function (metadata) {
       return cb(null, metadata);
     }).catch(function (err) {
-      if (err.message.indexOf('does not exist') > -1) {
+      if (err.message.indexOf('does not exist') > -1 && fallbackEnabled) {
         return passthrough();
       }
       return cb(err, {});

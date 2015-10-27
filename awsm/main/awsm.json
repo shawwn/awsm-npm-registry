@@ -1,7 +1,8 @@
 {
   "lambda": {
     "envVars": [
-     "REGISTRY_BUCKET_NAME"
+     "REGISTRY_BUCKET_NAME",
+     "REGISTRY_FALLBACK_DISABLED"
     ],
     "deploy": true,
     "package": {

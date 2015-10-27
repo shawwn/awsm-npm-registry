@@ -10,10 +10,21 @@ Please be aware that support for NPM features is currently limited. Current vers
 
 2. Install this module `npm install inbot/awsm-npm-registry --save`
 
-3. Run `jaws env set <stage> all REGISTRY_BUCKET_NAME <bucket_name>` to set your registry bucket name. Value should be `<stage>.<domain>`, domain being the value that you entered when you created a new JAWS project or stage.
-
-4. Run `jaws env set <stage> all REGISTRY_BUCKET_REGION <region>` to set registry bucket region. Region is the same region that you selected when creating the project or new stage.
-
+3. Set required ENV variables.
+   
+   ```
+   # Set your registry bucket name. Value should be <stage>.registry.<domain>, domain being the value that you entered when you created a new JAWS project or stage.
+   jaws env set <stage> all REGISTRY_BUCKET_NAME <bucket_name>
+   
+   # Set registry bucket region. Region is the same region that you selected when creating the project or new stage. 
+   jaws env set <stage> all REGISTRY_BUCKET_REGION <region>
+   
+   # Optional: Disable fallback to npmjs.org registry when package is not found from your registry. Defaults to false.
+   jaws env set <stage> all REGISTRY_FALLBACK_DISABLED true
+   ```
+   
+4. Tell JAWS to update and deploy CloudFormation stack with additional resources added from `awsm-npm-registry` module. Run `jaws deploy resources <stage> <region>`
+   
 5. Deploy your project with `jaws dash`. Remember to select all `awsm-npm-registry` related actions and endpoints.
 
 6. Notice the API Gateway endpoint URL that is printed out. This will be the base URL of your registry.
@@ -33,7 +44,7 @@ Lambda function that you are looking for is  `<stage>-<project_name>-l-lAwsmNpmR
 
 ```
 Event source: S3
-Bucket: <stage>-<domain>
+Bucket: <stage>.registry.<domain>
 Event type: Object created (All)
 Suffix: .tgz
 ```
